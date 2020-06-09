@@ -1,7 +1,7 @@
-# PHP Techdegree Project 7 - Todo API with Laravel
+# Todo API with Laravel
 
 <!-- step -->
-### Crate a Laravel app and connect it to a **MySQL** database using the .env file. 
+### Create a Laravel app and connect it to a **MySQL** database using the .env file. 
 
 <!-- step -->
 #### Create the Todo Model and Migration containing the id, name, status and timestamps.
@@ -36,15 +36,4 @@
 * Route [DELETE] /api/todos/{id}
 
 
-# Exceeds Expectations
-<!-- step -->
-#### Modify the default Welcome view to include a link that return all Todos.
-
-<!-- step -->
-#### Create a TodoResource to remove database specific data such as id and timestamps. The TodoResource should remove `id`, `timestamps` from the data returned to the API consumer.
-
-<!-- step -->
-#### Handle missing fields with a validation message, for each missing field. For example, if the title is missing, display the an error message like this: 
-* "The title field is required."
-
-Happy coding! 🙌🏼
+Happy coding! 🙌
