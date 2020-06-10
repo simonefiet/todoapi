@@ -14,9 +14,17 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('todo', 'TodoController@index');
-Route::get('todo/{todo}', 'TodoController@show');
-Route::put('todo/{todo}', 'TodoController@update');
-Route::patch('todo/{todo}', 'TodoController@update');
-Route::post('todo', 'TodoController@store');
-Route::delete('todo/{todo}', 'TodoController@destroy');
+/*
+Grouping routes
+Route::prefix('todo')->group(function() {
+	Route::get('todo', 'TodoController@index');
+	Route::get('todo/{todo}', 'TodoController@show');
+	Route::put('todo/{todo}', 'TodoController@update');
+	Route::patch('todo/{todo}', 'TodoController@update');
+	Route::post('todo', 'TodoController@store');
+	Route::delete('todo/{todo}', 'TodoController@destroy');
+});
+*/
+
+//Routes for todo refactored
+Route::resource('todo', 'TodoController');

@@ -31,6 +31,12 @@ class TodoController extends Controller
             'name' => 'required',
             'status' => 'required'
         ]);
+        if($validate->fails()) {
+            return response()->json([
+                'status_code' => 400,
+                'errors' => $validate->errors()
+            ],400);
+        }
         return response(new TodoResource(Todo::create($validate->validate())), 201);
     }
 
@@ -58,6 +64,12 @@ class TodoController extends Controller
             'name' => 'required',
             'status' => 'required'
         ]);
+        if($validate->fails()) {
+            return response()->json([
+                'status_code' => 400,
+                'errors' => $validate->errors()
+            ],400);
+        }
         $todo->update($validate->validate());
         return response(new TodoResource($todo), 201);
     }
